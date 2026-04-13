@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="auth-page">
+        <section class="auth-card">
+            <h1>Create Account</h1>
+            <p class="form-copy">Register as a user or admin and continue directly to the dashboard.</p>
+
+            <form id="registerForm" class="form">
+                <input id="fullName" placeholder="Full Name" required>
+                <input id="email" type="email" placeholder="Email" required>
+                <input id="password" type="password" placeholder="Password" required>
+
+                <select id="role">
+                    <option value="ROLE_USER">User</option>
+                    <option value="ROLE_ADMIN">Admin</option>
+                </select>
+
+                <button type="submit" class="button primary">Register</button>
+            </form>
+
+            <p id="message" class="message"></p>
+            <p class="form-footer">Already registered? <a href="login.html">Login</a></p>
+        </section>
+    </main>
+
+    <script src="js/config.js"></script>
+    <script src="js/utils/auth.js"></script>
+    <script src="js/api/authApi.js"></script>
+    <script src="js/pages/register.js"></script>
+</body>
+</html>

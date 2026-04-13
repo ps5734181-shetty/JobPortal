@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Job Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="dashboard-page">
+        <header class="dashboard-header">
+            <div>
+                <p class="eyebrow">Dashboard</p>
+                <h1>Available Jobs</h1>
+                <p class="form-copy">Welcome, <span id="userName"></span></p>
+            </div>
+            <button type="button" class="button secondary" onclick="logout()">Logout</button>
+        </header>
+
+        <section id="adminPanel" style="display:none;" class="admin-panel">
+            <h2>Post / Edit Job</h2>
+            <input type="hidden" id="editJobId">
+            <form id="jobForm" class="form admin-form">
+                <input id="jobTitle" placeholder="Job Title" required>
+                <input id="jobCompany" placeholder="Company Name" required>
+                <input id="jobLocation" placeholder="Location" required>
+                <input id="jobSalary" placeholder="Salary (e.g. Rs 8-12 LPA)" required>
+                <select id="jobType">
+                    <option value="Full-Time">Full-Time</option>
+                    <option value="Part-Time">Part-Time</option>
+                    <option value="Remote">Remote</option>
+                </select>
+                <textarea id="jobDescription" placeholder="Job Description" rows="4" required></textarea>
+                <button type="submit" class="button primary">Save Job</button>
+            </form>
+            <p id="jobFormMessage" class="message"></p>
+        </section>
+
+        <p id="dashboardMessage" class="message"></p>
+        <section id="jobsContainer" class="jobs-grid"></section>
+    </main>
+
+    <script src="js/config.js"></script>
+    <script src="js/utils/auth.js"></script>
+    <script src="js/api/jobApi.js"></script>
+    <script src="js/api/applicationApi.js"></script>
+    <script src="js/pages/dashboard.js"></script>
+</body>
+</html>
